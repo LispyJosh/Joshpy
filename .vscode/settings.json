@@ -1,0 +1,5 @@
+{
+    "python.pythonPath": "venv\\Scripts\\python.exe",
+    "terminal.integrated.shellArgs.windows": ["/K", ".\\venv\\Scripts\\activate"]
+  }
+  
