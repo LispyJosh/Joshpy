@@ -1,5 +1,10 @@
 {
-    "python.pythonPath": "venv\\Scripts\\python.exe",
-    "terminal.integrated.shellArgs.windows": ["/K", ".\\venv\\Scripts\\activate"]
-  }
+  "python.pythonPath": "venv/Scripts/python.exe",  // Path to Python executable in venv
+  "terminal.integrated.shellArgs.windows": [
+    "-NoExit",
+    "-Command",
+    ".\\venv\\Scripts\\Activate"
+  ]
+}
+
   
