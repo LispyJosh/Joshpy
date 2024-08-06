@@ -3,8 +3,8 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 # Route for the home page (e.g., city.html)
-@app.route('/')
-def index():
+@app.route('/city')
+def city():
     return render_template('city.html')
 
 # Route for the forest page (e.g., forest.html)
