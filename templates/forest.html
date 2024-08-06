@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forest</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="hero">
+
+        <video autoplay loop muted playsinline class="back-video">
+            <source src="{{ url_for('static', filename='assets/video/forest4k.mp4') }}" type="video/mp4"> 
+            Your browser does not support the video tag.
+        </video>
+        
+
+        <nav>
+            <img src="{{ url_for('static', filename='assets/images/logo.png') }}" class="logo">
+            <ul>
+                <li><a href="#">Space</a></li>
+                <li><a href="#">City</a></li>
+                <li><a href="#">Seaside</a></li>
+                <li><a href="#">River</a></li>
+                <li><a href="#">Forest</a></li>
+            </ul>
+        </nav>
+    <div class="cont"></div> 
+
+    </div>
+</body>
+</html>
