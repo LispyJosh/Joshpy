@@ -3,6 +3,7 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 # Route for the home page (e.g., city.html)
+@app.route('/') #@app.route('/') maps the root URL (i.e., http://localhost:5000/
 @app.route('/city')
 def city():
     return render_template('city.html')
