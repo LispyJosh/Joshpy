@@ -16,6 +16,9 @@
         
 
         <nav>
+            <div id="clock-container">
+                <div id="clock">00:00:00</div>
+            </div>
             <img src="{{ url_for('static', filename='assets/images/logo.png') }}" class="logo">
             <ul>
                 <li><a href="{{ url_for('space') }}">Space</a></li>
@@ -28,6 +31,10 @@
     <div class="cont"></div> 
 
     </div>
+
+    
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
 </body>
 </html>
 
