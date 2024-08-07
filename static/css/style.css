@@ -95,7 +95,8 @@ nav ul li a{
 
 .progress-container {
     width: 100%;
-    background-color: #e0e0e0;
+    background-color: transparent;
+    border: .1em solid white;
     border-radius: 25px;
     overflow: hidden;
     margin-top: 20%;
