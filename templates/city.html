@@ -29,10 +29,15 @@
             </ul>
         </nav>
 
-        <audio controls loop>
-            <source src="{{ url_for('static', filename='assets/audio/city.mp3.mp3') }}" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
+    </div>
+    <div class="audio-container">
+        <div class="audio-player">
+            <button class="play-btn">Play</button>
+            <button class="pause-btn">Pause</button>
+            <input type="range" class="volume-bar" value="100" min="0" max="100">
+            <audio id="audio" src="{{ url_for('static', filename='assets/audio/city.mp3') }}" loop></audio>
+        </div>
+    </div>
     
         <div class="progress-container">
             <div class="progress-bar" id="progress-bar"></div>

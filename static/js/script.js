@@ -34,3 +34,29 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }, 1000); // Update every second
 });
 
+// audio // 
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const audio = document.getElementById('audio');
+    const playBtn = document.querySelector('.play-btn');
+    const pauseBtn = document.querySelector('.pause-btn');
+    const volumeBar = document.querySelector('.volume-bar');
+
+    // Play Button
+    playBtn.addEventListener('click', function () {
+        audio.play();
+    });
+
+    // Pause Button
+    pauseBtn.addEventListener('click', function () {
+        audio.pause();
+    });
+
+    // Volume Bar Change
+    volumeBar.addEventListener('input', function () {
+        audio.volume = volumeBar.value / 100;
+    });
+});
+
+
