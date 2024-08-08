@@ -93,19 +93,28 @@ nav ul li a{
 }
 
 
+/* Style for the progress bar container */
 .progress-container {
-    width: 100%;
+    width: 75%; /* Fill 75% of the page */
+    max-width: 100%; /* Set a max-width to ensure it doesn't overflow */
+    position: fixed; /* Fix the position below the navbar */
+    top: 200px; /* Position below the navbar; adjust as needed */
+    left: 0;
+    right: 0;
     background-color: transparent;
-    border: .1em solid white;
+    border: 0.1em solid white;
     border-radius: 25px;
     overflow: hidden;
-    margin-top: 20%;
-    margin-bottom: 80%; /* keep the bar placement here */
+    z-index: 900; /* Keep it below the navbar */
+    padding: 0;
+    box-sizing: border-box; /* Include padding and border in total width/height */
+    margin: 0 auto;
 }
 
+/* Style for the progress bar */
 .progress-bar {
-    width: 0%;
-    height: .5em;
+    width: 0%; /* Initial width, will be updated via JavaScript */
+    height: 0.5em;
     background-color: green;
     text-align: center;
     line-height: 30px;
