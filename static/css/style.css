@@ -95,10 +95,10 @@ nav ul li a{
 
 /* Style for the progress bar container */
 .progress-container {
-    width: 75%; /* Fill 75% of the page */
+    width: 75%; /* Fills 75% of the page */
     max-width: 100%; /* Set a max-width to ensure it doesn't overflow */
     position: fixed; /* Fix the position below the navbar */
-    top: 200px; /* Position below the navbar; adjust as needed */
+    top: 200px; /* Position below the navbar; adjust so its a good distance from nav */
     left: 0;
     right: 0;
     background-color: transparent;
