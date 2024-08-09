@@ -124,8 +124,8 @@ nav ul li a{
 
 .audio-container {
     position: absolute;
-    top: 60px; /* Adjust based on navbar height */
-    left: 10px;
+    top: 120px; /* Adjust based on navbar height */
+    left: 30px;
     z-index: 1000;
 }
 
