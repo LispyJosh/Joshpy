@@ -45,5 +45,13 @@ if __name__ == '__main__':
 
 #timer part goes here
 
+from flask import jsonify
+
+# Timer end point
+@app.route('/timer-end', methods=['POST'])
+def timer_end():
+    return jsonify({"status": "success", "message": "Time's Up, Great Job!"})
+
+
 
 

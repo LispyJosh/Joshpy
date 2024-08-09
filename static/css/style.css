@@ -98,7 +98,7 @@ nav ul li a{
     width: 75%; /* Fills 75% of the page */
     max-width: 100%; /* Set a max-width to ensure it doesn't overflow */
     position: fixed; /* Fix the position below the navbar */
-    top: 200px; /* Position below the navbar; adjust so its a good distance from nav */
+    top: 600px; /* Position below the navbar; adjust so its a good distance from nav */
     left: 0;
     right: 0;
     background-color: transparent;
@@ -148,6 +148,22 @@ nav ul li a{
     width: 100px;
 }
 
+/* timer stuff goes here */ 
 
+#timer-container {
+    position: fixed;
+    top: 33%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background: transparent;
+    color: #fff;
+    font-size: 2rem;
+}
+
+#timer {
+    font-size: 10rem;
+}
 
 

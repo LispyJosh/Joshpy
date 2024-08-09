@@ -59,4 +59,33 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// timer stuff here
+
+document.addEventListener('DOMContentLoaded', function() {
+    let countdown = 50 * 60; // 50 minutes in seconds
+    const timerElement = document.getElementById('timer');
+
+    function updateTimer() {
+        const minutes = Math.floor(countdown / 60);
+        const seconds = countdown % 60;
+        timerElement.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+        countdown--;
+
+        if (countdown < 0) {
+            // Send request to the server when the timer ends
+            fetch('/timer-end', { method: 'POST' })
+                .then(response => response.json())
+                .then(data => {
+                    alert(data.message);
+                })
+                .catch(error => console.error('Error:', error));
+        } else {
+            setTimeout(updateTimer, 1000);
+        }
+    }
+
+    updateTimer();
+});
+
+
 
