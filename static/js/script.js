@@ -1,15 +1,15 @@
-// DIGITAL CLOCK PROGRAM
+// DIGITAL CLOCK
 
 function updateClock(){
 
     const now = new Date();
     let hours = now.getHours();
-    const meridiem = hours >= 12 ? "PM" : "AM";
+    const meridiem = hours >= 12 ? "PM" : "AM"; //not a 24hr clock
     hours = hours % 12 || 12;
     hours = hours.toString().padStart(2, 0);
     const minutes = now.getMinutes().toString().padStart(2, 0);
     const seconds = now.getSeconds().toString().padStart(2, 0);
-    const timeString = `${hours}:${minutes}:${seconds} ${meridiem}`;
+    const timeString = `${hours}:${minutes}${meridiem}`; //decided not to remove seconds
     document.getElementById("clock").textContent = timeString;
 }
 
@@ -21,7 +21,7 @@ setInterval(updateClock, 1000);
 document.addEventListener('DOMContentLoaded', (event) => {
     const progressBar = document.getElementById('progress-bar');
     const totalDuration = 3000; // Total duration in seconds (50mins)
-    let currentDuration = 0;
+    let currentDuration = 0; //have python set up to trigger on 0
 
     const interval = setInterval(() => {
         currentDuration++;

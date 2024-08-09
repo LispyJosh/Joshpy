@@ -11,7 +11,7 @@ html, body {
     height: 100%;
 }
 
-.hero {
+.hero { /*setting for video background */
    width: 100%;
    height: 100vh;
    background-image: linear-gradient(rgba(12,3,51,0.3),rgba(12,3,51,0.3));
@@ -55,12 +55,20 @@ nav ul li a{
 
 }
 
+nav ul li a:hover {
+    text-decoration: underline; /* Underlines the link on hover */
+    color: #ffc404; /* keeping with the color pattern */
+
+}    
+
 .back-video{
     position: absolute;
     right: 0;
     bottom: 0;
     z-index: -1;
 }
+
+/* media queries */
 
 @media (min-aspect-ratio: 16/9){
     .back-video{
@@ -76,6 +84,7 @@ nav ul li a{
     }
 }
 
+/* clock stuff */
 
 #clock-container{
     display: flex;
@@ -92,22 +101,23 @@ nav ul li a{
     padding-left: 0;
 }
 
+/* progress bar */
 
 /* Style for the progress bar container */
 .progress-container {
     width: 75%; /* Fills 75% of the page */
     max-width: 100%; /* Set a max-width to ensure it doesn't overflow */
     position: fixed; /* Fix the position below the navbar */
-    top: 600px; /* Position below the navbar; adjust so its a good distance from nav */
+    top: 600px; /* Position below the navbar; adjusted so its a good distance from nav! */
     left: 0;
     right: 0;
     background-color: transparent;
     border: 0.1em solid white;
     border-radius: 25px;
     overflow: hidden;
-    z-index: 900; /* Keep it below the navbar */
+    z-index: 900; /* this Keeps it below the navbar */
     padding: 0;
-    box-sizing: border-box; /* Include padding and border in total width/height */
+    box-sizing: border-box; /* for padding and border in total width/height */
     margin: 0 auto;
 }
 
@@ -115,18 +125,22 @@ nav ul li a{
 .progress-bar {
     width: 0%; /* Initial width, will be updated via JavaScript */
     height: 0.5em;
-    background-color: green;
+    background-color: #ffc404;
     text-align: center;
     line-height: 30px;
     color: white;
     border-radius: 25px;
 }
 
+/* audio player */
+
 .audio-container {
     position: absolute;
-    top: 120px; /* Adjust based on navbar height */
+    top: 120px; /* Adjusted based on navbar height */
     left: 30px;
     z-index: 1000;
+
+
 }
 
 .audio-player {
@@ -138,7 +152,7 @@ nav ul li a{
 .play-btn, .pause-btn {
     padding: 5px 10px;
     border: none;
-    background-color: #007bff;
+    background-color: #ffc404;
     color: white;
     cursor: pointer;
     border-radius: 3px;
@@ -146,6 +160,7 @@ nav ul li a{
 
 .volume-bar {
     width: 100px;
+    accent-color: #ffc404; /* color of bar never used accent-color before */
 }
 
 /* timer stuff goes here */ 
