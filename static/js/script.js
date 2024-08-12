@@ -21,7 +21,7 @@ setInterval(updateClock, 1000);
 document.addEventListener('DOMContentLoaded', (event) => {
     const progressBar = document.getElementById('progress-bar');
     const totalDuration = 3000; // Total duration in seconds (50mins)
-    let currentDuration = 0; //have python set up to trigger on 0
+    let currentDuration = 0; //python set up for trigger not needed
 
     const interval = setInterval(() => {
         currentDuration++;
