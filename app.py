@@ -53,5 +53,13 @@ def timer_end():
     return jsonify({"status": "success", "message": "Time's Up, Great Job!"})
 
 
+# to-list
+
+@app.route('/to-do')
+def todo():
+    return render_template('to-do.html')
+
+
+
 
 
