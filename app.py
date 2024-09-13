@@ -55,9 +55,9 @@ def timer_end():
 
 # to-list
 
-@app.route('/to-do')
+@app.route('/todo')
 def todo():
-    return render_template('to-do.html')
+    return render_template('todo.html')
 
 from flask_sqlalchemy import SQLAlchemy
 
