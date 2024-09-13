@@ -59,10 +59,11 @@ def timer_end():
 def todo():
     return render_template('todo.html')
 
+
 from flask_sqlalchemy import SQLAlchemy
 
 # Initialize the database
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://username:password@localhost/todo_db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:mexicanroco98yt/todo_db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
