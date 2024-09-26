@@ -12,6 +12,9 @@ db = SQLAlchemy(app)
 class TodoItem(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     task = db.Column(db.String(200), nullable=False)
+    eta = db.Column(db.String(50), nullable=True)
+    priority = db.Column(db.String(20), nullable=True)
+    due_date = db.Column(db.String(20), nullable=True)
 
     def __repr__(self):
         return f'<Task {self.id}: {self.task}>'
@@ -20,7 +23,7 @@ class TodoItem(db.Model):
 with app.app_context():
     db.create_all()
 
-# Route for the home page (e.g., city.html)
+# Route for the home page (city.html)
 @app.route('/')
 @app.route('/city')
 def city():
@@ -51,35 +54,37 @@ def space():
 def todo():
     return render_template('todo.html')
 
-# Error handling for 404 Not Found
-@app.errorhandler(404)
-def page_not_found(e):
-    return render_template('404.html'), 404
-
-# Error handling for 500 Internal Server Error
-@app.errorhandler(500)
-def internal_server_error(e):
-    return render_template('500.html'), 500
-
-# Timer end point
-@app.route('/timer-end', methods=['POST'])
-def timer_end():
-    return jsonify({"status": "success", "message": "Time's Up, Great Job!"})
-
 # Add a to-do item
 @app.route('/add-todo', methods=['POST'])
 def add_todo():
     task_data = request.json
-    new_task = TodoItem(task=task_data['task'])
+    new_task = TodoItem(
+        task=task_data['task'], 
+        eta=task_data['eta'], 
+        priority=task_data['priority'], 
+        due_date=task_data['due_date']
+    )
     db.session.add(new_task)
     db.session.commit()
-    return jsonify({"status": "success", "task": new_task.task})
+    return jsonify({
+        "status": "success", 
+        "task": new_task.task, 
+        "eta": new_task.eta, 
+        "priority": new_task.priority, 
+        "due_date": new_task.due_date
+    })
 
 # Get all to-do items
 @app.route('/get-todos', methods=['GET'])
 def get_todos():
     todos = TodoItem.query.all()
-    return jsonify([{"id": todo.id, "task": todo.task} for todo in todos])
+    return jsonify([{
+        "id": todo.id, 
+        "task": todo.task, 
+        "eta": todo.eta, 
+        "priority": todo.priority, 
+        "due_date": todo.due_date
+    } for todo in todos])
 
 # Delete a to-do item
 @app.route('/delete-todo/<int:id>', methods=['DELETE'])
@@ -90,6 +95,21 @@ def delete_todo(id):
         db.session.commit()
         return jsonify({"status": "success", "message": "Task deleted"})
     return jsonify({"status": "error", "message": "Task not found"}), 404
+
+# Timer endpoint (placeholder for the timer feature)
+@app.route('/timer-end', methods=['POST'])
+def timer_end():
+    return jsonify({"status": "success", "message": "Time's Up, Great Job!"})
+
+# Error handling for 404 Not Found
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
+# Error handling for 500 Internal Server Error
+@app.errorhandler(500)
+def internal_server_error(e):
+    return render_template('500.html'), 500
 
 if __name__ == '__main__':
     app.run(debug=True)

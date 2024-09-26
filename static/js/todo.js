@@ -15,7 +15,16 @@ document.addEventListener('DOMContentLoaded', () => {
     todoForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const taskInput = document.getElementById('todo-input');
-        const newTask = { task: taskInput.value };
+        const etaInput = document.getElementById('eta-input');
+        const priorityInput = document.getElementById('priority-input');
+        const dueDateInput = document.getElementById('due-date-input');
+
+        const newTask = { 
+            task: taskInput.value,
+            eta: etaInput.value,
+            priority: priorityInput.value,
+            due_date: dueDateInput.value
+        };
 
         fetch('/add-todo', {
             method: 'POST',
@@ -24,15 +33,25 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .then(response => response.json())
         .then(data => {
-            addTaskToList({ id: data.id, task: data.task });
-            taskInput.value = '';  // Clear the input field
+            addTaskToList({
+                id: data.id, 
+                task: data.task, 
+                eta: data.eta, 
+                priority: data.priority, 
+                due_date: data.due_date
+            });
+            taskInput.value = '';  // Clear the input fields
+            etaInput.value = '';
+            priorityInput.value = '';
+            dueDateInput.value = '';
         });
     });
 
     // Function to add task to list
     function addTaskToList(task) {
         const li = document.createElement('li');
-        li.textContent = task.task;
+        li.textContent = `Task: ${task.task}, ETA: ${task.eta}, Priority: ${task.priority}, Due Date: ${task.due_date}`;
+        
         const deleteBtn = document.createElement('button');
         deleteBtn.textContent = 'Delete';
         deleteBtn.addEventListener('click', () => {
