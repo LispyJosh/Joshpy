@@ -181,4 +181,24 @@ nav ul li a:hover {
     font-size: 10rem;
 }
 
+/*todo section */
+
+.todo-container {
+    width: 75%; /* Fills 75% of the page */
+    max-width: 100%; /* Set a max-width to ensure it doesn't overflow */
+    position: fixed; /* Fix the position below the navbar */
+    top: 125px; /* Position below the navbar; adjusted so its a good distance from nav! */
+    left: 0;
+    right: 0;
+    background-color: transparent;
+    border: 0.1em solid #ffc404;
+    border-radius: 25px;
+    overflow: hidden;
+    z-index: 900; /* this Keeps it below the navbar */
+    padding: 0;
+    box-sizing: border-box; /* for padding and border in total width/height */
+    margin: 0 auto;
+    color: white; /*text colour */
+}
+
 
