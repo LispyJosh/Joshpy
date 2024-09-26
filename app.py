@@ -69,6 +69,7 @@ def add_todo():
     db.session.commit()
     return jsonify({
         "status": "success", 
+         "id": new_task.id,
         "task": new_task.task, 
         "eta": new_task.eta, 
         "priority": new_task.priority, 

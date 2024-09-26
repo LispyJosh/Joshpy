@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         const taskInput = document.getElementById('todo-input');
         const etaInput = document.getElementById('eta-input');
-        const priorityInput = document.getElementById('priority-input');
+        const priorityInput = document.getElementById('priority-select');
         const dueDateInput = document.getElementById('due-date-input');
 
         const newTask = { 
