@@ -19,6 +19,7 @@ class TodoItem(db.Model):
     def __repr__(self):
         return f'<Task {self.id}: {self.task}>'
 
+
 # Create the database
 with app.app_context():
     db.create_all()
