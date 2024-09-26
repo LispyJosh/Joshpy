@@ -48,19 +48,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Function to add task to list
-    function addTaskToList(task) {
-        const li = document.createElement('li');
-        li.textContent = `Task: ${task.task}, ETA: ${task.eta}, Priority: ${task.priority}, Due Date: ${task.due_date}`;
-        
-        const deleteBtn = document.createElement('button');
-        deleteBtn.textContent = 'Delete';
-        deleteBtn.addEventListener('click', () => {
-            fetch(`/delete-todo/${task.id}`, { method: 'DELETE' })
-                .then(() => {
-                    li.remove();
-                });
-        });
-        li.appendChild(deleteBtn);
-        todoList.appendChild(li);
-    }
+function addTaskToList(task) {
+    const li = document.createElement('li');
+    li.className = 'todo-item'; // Add a class for styling
+
+    // Create a container for task details
+    const taskDetails = document.createElement('div');
+    taskDetails.className = 'task-details';
+    taskDetails.innerHTML = `
+        <strong>Task:</strong> ${task.task}<br>
+        <strong>ETA:</strong> ${task.eta}<br>
+        <strong>Priority:</strong> <span class="priority-${task.priority}">${task.priority}</span><br>
+        <strong>Due Date:</strong> ${task.due_date}
+    `;
+
+    // Create a delete button
+    const deleteBtn = document.createElement('button');
+    deleteBtn.className = 'delete-btn'; // Add a class for styling
+    deleteBtn.textContent = 'Delete';
+    deleteBtn.addEventListener('click', () => {
+        fetch(`/delete-todo/${task.id}`, { method: 'DELETE' })
+            .then(() => {
+                li.remove();
+            });
+    });
+
+    // Append details and button to the list item
+    li.appendChild(taskDetails);
+    li.appendChild(deleteBtn);
+    todoList.appendChild(li);
+}
+
 });

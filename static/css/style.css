@@ -187,18 +187,85 @@ nav ul li a:hover {
     width: 75%; /* Fills 75% of the page */
     max-width: 100%; /* Set a max-width to ensure it doesn't overflow */
     position: fixed; /* Fix the position below the navbar */
-    top: 125px; /* Position below the navbar; adjusted so its a good distance from nav! */
+    top: 100px; /* Position below the navbar; adjusted so its a good distance from nav! */
     left: 0;
     right: 0;
     background-color: transparent;
-    border: 0.1em solid #ffc404;
+    border: 0.1em solid white;
     border-radius: 25px;
     overflow: hidden;
     z-index: 900; /* this Keeps it below the navbar */
     padding: 0;
     box-sizing: border-box; /* for padding and border in total width/height */
     margin: 0 auto;
-    color: white; /*text colour */
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#todo-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.todo-item {
+    padding: 20px;  /* Add padding for the bubble effect */
+    margin-bottom: 15px;  /* Space between bubbles */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Add a subtle shadow for depth */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 75%; /* Fills 75% of the page */
+    max-width: 100%; /* Set a max-width to ensure it doesn't overflow */
+    position: fixed; /* Fix the position below the navbar */
+    top: 600px; /* Position below the navbar; adjusted so its a good distance from nav! */
+    left: 0;
+    right: 0;
+    background-color: transparent;
+    border: 0.1em solid white;
+    border-radius: 25px;
+    overflow: hidden;
+    z-index: 900; /* this Keeps it below the navbar */
+    box-sizing: border-box; /* for padding and border in total width/height */
+    margin: 0 auto;
+}
+
+.task-details {
+    flex-grow: 1;
+    margin-right: 10px;  /* Add space between task details and delete button */
+}
+
+.delete-btn {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: #ff1a1a;
+}
+
+.priority-low {
+    color: green;
+}
+
+.priority-medium {
+    color: orange;
+}
+
+.priority-high {
+    color: red;
 }
 
 
