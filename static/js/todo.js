@@ -64,7 +64,7 @@ function addTaskToList(task) {
 
     // Create a delete button
     const deleteBtn = document.createElement('button');
-    deleteBtn.className = 'delete-btn'; // Add a class for styling
+    deleteBtn.className = 'delete-btn'; // styling class for delete button
     deleteBtn.textContent = 'Delete';
     deleteBtn.addEventListener('click', () => {
         fetch(`/delete-todo/${task.id}`, { method: 'DELETE' })
@@ -76,7 +76,7 @@ function addTaskToList(task) {
     // Append details and button to the list item
     li.appendChild(taskDetails);
     li.appendChild(deleteBtn);
-    todoList.appendChild(li);
+    document.getElementById('todo-list').appendChild(li);
 }
 
 });
